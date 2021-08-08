@@ -1,0 +1,119 @@
+body {
+    background-color: indigo;
+    background-image: radial-gradient(ellipse, rgb(116, 92, 255), indigo);
+}
+
+.center {
+    padding: 0 calc(50% - 636px);
+}
+
+.main {
+    display: flex;
+}
+
+.menu {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    border: 5px double grey;
+    background-color: #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.cart-button {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 180px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #ccc;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 2em;
+    transition: color 0.25s;
+    transition: background-color 0.25s;
+    cursor: pointer;
+    text-align: center;
+    color: blue;
+}
+
+.cart-button:hover {
+    color: red;
+    background-color: grey;
+}
+
+.goods-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.goods-item {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid grey;
+    background-color: #ccc;
+    font-size: 14px;
+    width: 200px;
+    height: 250px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.goods-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.item-button {
+    padding: 5px;
+    margin-top: 10px;
+    border: 0;
+    border-radius: 3px;
+    transition: color 0.25s;
+    cursor: pointer;
+}
+
+.item-button:hover {
+    color: red;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.cart {
+    width: 30%;
+    /* display: flex;
+    flex-direction: column; */
+    background-color: darkslateblue;
+    color: whitesmoke;
+}
+
+.cart-title {
+    font-size: 16px;
+    font-style: italic;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.cart-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
