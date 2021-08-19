@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+    <title>Интернет-магазин</title>
+
+    <script defer src="js/script.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <nav class="menu center">
+                <!-- <button class="cart-button" type="button">Каталог</button> -->
+                <input type="text" class="goods-search" id="inputS" v-model="searchLine" />
+                <input type="button" class="search-button" v-on:click="filterGoods(searchLine)" value="Искать">
+                <input type="button" class="cart-button" v-on:click="showCart" value="Корзина" /><span v-if="countGoodsCart != ' 0'">{{countGoodsCart}}</span>
+            </nav>
+
+        </header>
+        <main>
+            <div class="center main">
+                <div class="goods-list">
+                    <div class="goods-item" v-for="good in filteredGoods">
+                        <h3>{{ good.product_name }}</h3>
+                        <p>{{ good.price }}</p>
+                        <input type="button" class="add-button" v-on:click="addInCart(good.id_product)" value="Добавить в корзину">
+                    </div>
+                </div>
+
+                <div class="cart" v-if="isVisibleCart === true">
+                    <br>
+                    <h2 class="cart-title">Товары в корзине</h2>
+                    <div class="cart-list" v-for="good in goodscart">
+
+                        <h3>{{ good.product_name }}</h3>
+                        <p>{{ good.price }}</p>
+                        <input type="button" class="del-button" v-on:click="delFromCart(good.id_product)" value="Удалить из корзины">
+                    </div>
+                    <p>В корзине {{kol}} товаров на сумму {{sumPrice}} руб.</p>
+                    <span v-if="countGoodsCart === ' 0'">Корзина пуста</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</body>
+
+</html>
